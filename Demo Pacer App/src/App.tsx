@@ -6,6 +6,7 @@ import InefficientDashboardPage from './pages/InefficientDashboardPage';
 import SettingsPage from './pages/SettingsPage';
 import ProfilePage from './pages/ProfilePage';
 import InefficientReportPage from './pages/InefficientReportPage';
+import EfficientReportPage from './pages/EfficientReportPage';
 
 function App() {
 
@@ -33,6 +34,7 @@ function App() {
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/dashboard-inefficient" element={<InefficientDashboardPage />} />
           <Route path="/report-generator" element={<InefficientReportPage />} />
+          <Route path="/efficient-report-generator" element={<EfficientReportPage />} />
           <Route path="/settings" element={<SettingsPage />} />
         </Routes>
       </main>

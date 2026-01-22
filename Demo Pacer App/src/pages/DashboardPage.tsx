@@ -23,7 +23,7 @@ const DashboardPage = () => {
                 setTimeout(() => navigate('/settings'), 500);
                 break;
             case 'report':
-                showAlert('Generating Report...', 'info');
+                navigate('/efficient-report-generator');
                 break;
             case 'logout':
                 showAlert('Logging out...', 'danger');

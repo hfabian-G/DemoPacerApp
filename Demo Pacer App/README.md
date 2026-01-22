@@ -1,73 +1,61 @@
-# React + TypeScript + Vite
+# Workflow Pacer - Demonstration Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a web application built with React and TypeScript to serve as a demonstration target for the "Workflow Pacer" UX measurement tool. Its purpose is to provide a variety of realistic user workflows, UI layouts, and interaction models that can be measured and compared to showcase the capabilities of the Pacer tool.
 
-Currently, two official plugins are available:
+## Core Demonstration Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This application was specifically designed to highlight the following comparisons:
 
-## React Compiler
+1.  **Efficient vs. Inefficient UI Design:**
+    *   Navigate to the **Dashboard** and the **Inefficient Dashboard**. The former has a compact, logical layout, while the latter forces significant mouse travel and scrolling to perform the same set of actions. This provides a clear, measurable difference in "Pixel Distance".
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2.  **Standard vs. "Super User" Workflows:**
+    *   Nearly every action and navigation path has a keyboard hotkey alternative (`⌘+Shift+<Key>`), complete with underlined hints. You can measure the time and effort saved when using these shortcuts compared to standard mouse-only interaction.
 
-## Expanding the ESLint configuration
+3.  **Well-Designed vs. Poorly-Designed Processes:**
+    *   Compare the **Generate Report** workflow linked from the *Efficient Dashboard* against the one linked from the *Inefficient Dashboard*.
+    *   **Efficient:** A single-step form with smart fields (`t-7` date shortcuts).
+    *   **Inefficient:** A multi-step process with scattered inputs and an unnecessary confirmation modal.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Included Pages & Workflows
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+-   **Home Page**: A basic landing page.
+-   **Login Page**: A standard login form. (Hotkey: `⌘+Shift+L`)
+-   **Efficient Dashboard**: Features a compact layout, a sample chart, and a grouped action panel. (Hotkeys for actions: `⌘+Shift+I`, `⌘+Shift+E`, etc.)
+-   **Inefficient Dashboard**: Features the same components as the efficient dashboard, but they are scattered across the page to maximize mouse travel and require scrolling.
+-   **Profile Page**: A sample user profile page.
+-   **Settings Page**: A sample settings form with various input types. (Hotkey: `⌘+Shift+S`)
+-   **Efficient Report Generator**: A streamlined, single-step form with "smart" date inputs that parse shortcuts.
+-   **Inefficient Report Generator**: A multi-step, poorly designed workflow requiring excessive clicks, scrolling, and confirmation.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Getting Started
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Prerequisites
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+-   Node.js and npm installed.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Installation
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+1.  Clone the repository or download the source code.
+2.  Open your terminal in the project root directory.
+3.  Install the required dependencies:
+    ```bash
+    npm install
+    ```
+
+### Running the Application
+
+1.  In the project root directory, run the following command:
+    ```bash
+    npm run dev
+    ```
+2.  Open your web browser and navigate to the URL provided by Vite (usually `http://localhost:5173`).
+
+## Technology Stack
+
+-   **Framework:** React (with TypeScript)
+-   **Build Tool:** Vite
+-   **Styling:** Bootstrap & React-Bootstrap
+-   **Routing:** React Router
+-   **Charts:** Chart.js
+-   **Date Utilities:** date-fns

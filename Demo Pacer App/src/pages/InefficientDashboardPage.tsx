@@ -1,3 +1,6 @@
+import SampleChart from "../components/SampleChart";
+import { Link } from "react-router-dom";
+
 const InefficientDashboardPage = () => {
     return (
         <div>
@@ -12,25 +15,16 @@ const InefficientDashboardPage = () => {
                     <div className="card">
                         <div className="card-body">
                             <h5 className="card-title">Quarterly Performance</h5>
-                            {/* Placeholder for a chart */}
-                            <div className="bg-light d-flex justify-content-center align-items-center" style={{ height: '250px' }}>
-                                <p className="text-muted">[Chart Placeholder]</p>
-                            </div>
+                            <SampleChart />
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div style={{ marginTop: '20vh', textAlign: 'left' }}>
-                <button className="btn btn-primary">View Profile</button>
-            </div>
-
-            <div style={{ marginTop: '30vh', textAlign: 'center' }}>
-                 <button className="btn btn-info text-white">Generate Report</button>
-            </div>
-
-             <div style={{ marginTop: '40vh', textAlign: 'right', marginBottom: '50vh' }}>
-                <button className="btn btn-secondary">Edit Settings</button>
+            <div className="d-flex justify-content-between mt-5">
+                <button className="btn btn-primary">Download CSV</button>
+                <button className="btn btn-info text-white">View Raw Data</button>
+                <Link to="/report-generator" className="btn btn-secondary">Generate Report</Link>
             </div>
         </div>
     );

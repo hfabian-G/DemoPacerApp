@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HotkeyHint from "../components/HotkeyHint";
+import SampleChart from '../components/SampleChart';
 
 const DashboardPage = () => {
     const navigate = useNavigate();
@@ -14,8 +15,7 @@ const DashboardPage = () => {
     const handleAction = (action: string) => {
         switch (action) {
             case 'profile':
-                showAlert('Navigating to Profile...', 'primary');
-                // In a real app, you would navigate to the profile page
+                navigate('/profile');
                 break;
             case 'settings':
                 showAlert('Navigating to Settings...', 'secondary');
@@ -80,9 +80,7 @@ const DashboardPage = () => {
                     <div className="card">
                         <div className="card-body">
                             <h5 className="card-title">Quarterly Performance</h5>
-                            <div className="bg-light d-flex justify-content-center align-items-center" style={{ height: '250px' }}>
-                                <p className="text-muted">[Chart Placeholder]</p>
-                            </div>
+                            <SampleChart />
                         </div>
                     </div>
                 </div>

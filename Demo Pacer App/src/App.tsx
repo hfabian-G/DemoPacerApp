@@ -4,6 +4,8 @@ import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import InefficientDashboardPage from './pages/InefficientDashboardPage';
 import SettingsPage from './pages/SettingsPage';
+import ProfilePage from './pages/ProfilePage';
+import InefficientReportPage from './pages/InefficientReportPage';
 
 function App() {
 
@@ -17,6 +19,7 @@ function App() {
               <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/dashboard">Dashboard</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/dashboard-inefficient">Inefficient Dashboard</Link></li>
+              <li className="nav-item"><Link className="nav-link" to="/profile">Profile</Link></li>
               <li className="nav-item"><Link className="nav-link" to="/settings">Settings</Link></li>
             </ul>
           </div>
@@ -27,7 +30,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
           <Route path="/dashboard-inefficient" element={<InefficientDashboardPage />} />
+          <Route path="/report-generator" element={<InefficientReportPage />} />
           <Route path="/settings" element={<SettingsPage />} />
         </Routes>
       </main>
